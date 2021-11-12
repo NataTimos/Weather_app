@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+html, body, #root {
+    font-family: 'Poppins', sans-serif;
+    background-image: 
+        linear-gradient(
+            rgba(0, 116, 217, 0.5),
+            rgba(221, 221, 221, 0.75)
+        ),
+        linear-gradient(#ffdc00, #ffffff);
+    background-color: none;
+    color: #1e2432;
+    /* height: 100%; */
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.main-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.app-title{
+    text-shadow: 1px 1px #267323, 1px -1px #237352, -1px 1px #234673, -1px -1px #23733e, 3px 3px 6px rgba(0,0,0,.5);
+}
+.search-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.search {
+    outline: none;
+    padding: 20px 7%;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 3%;
+    background: rgba(250, 250, 250, 0.85);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+button {
+    position: relative;
+    /* width: 300px; */
+    /* height: 60px; */
+    margin: 10px 10px;
+    padding: 15px 15px  15px 10%;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease-in-out;
+    
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  button:active {
+    top: 1px;
+    box-shadow: none;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .icon {
+    position: absolute;
+    left: 15px;
   }
+  
+  .btn-green {
+    background-color: #b9c581;
+    border-bottom: 2px solid #094b3e;
+    box-shadow: inset 0 -2px #0f6e5b;
+  }
+  
+  .btn-green .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .btn-green:hover .icon {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+.city {
+    background-color: palegoldenrod;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 8%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
+.city p {
+    font: 1.5rem sans-serif;
+}
+
+.city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1e2432;
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: palegoldenrod;
+}
+
+.rectangle {
+    counter-reset: li; 
+    list-style: none; 
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+    .rectangle a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    margin: .5em 0 .5em 2.5em;
+    background: #D3D4DA;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+    }
+    .rectangle a:hover {background: #DCDDE1;}       
+    .rectangle a:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #9097A2;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+    }
+    .rectangle a:after {
+    position: absolute;
+    content: "";
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;
+    }
+    .rectangle a:hover:after {
+    left: -.5em;
+    border-left-color: #9097A2;
+    }
+
+@media only screen and (max-width: 576px) {
+    .search {
+        padding: 20px 15%;
+    }
+
+    .city {
+        padding: 40px 20%;
+    }
+}
+
